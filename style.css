@@ -1,0 +1,128 @@
+/* == Global == */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #5e2b97, #8e44ad);
+    position: relative;
+}
+
+/* Background overlay image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6f/Indonesian_traditional_food.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px);
+}
+
+/* Content grid */
+.content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card a {
+    color: #ffebcd;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    margin-top: 30px;
+}
+
+/* Toggle Mode Button */
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    background: #ffffff33;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.toggle-mode:hover {
+    background: #ffffff55;
+}
+
+/* Light Mode */
+body.light {
+    color: #333;
+    background: linear-gradient(135deg, #c39bd3, #e8daef);
+}
+
+body.light .card {
+    background: rgba(255,255,255,0.6);
+    color: #000;
+}
+
+body.light header, 
+body.light footer {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Back to top button */
+.top-btn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 14px 16px;
+    font-size: 22px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff55;
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.top-btn:hover {
+    background: #ffffff88;
+}
